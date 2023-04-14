@@ -1,13 +1,13 @@
 import { useState } from 'react'
+import data from './Data'
 
-const Input = data => {
+const Input = () => {
 	const [task, setTask] = useState('')
 
 	const newTask = () => {
-		data.push({ chore: { task }, complete: false })
+		setTask((previousTask)=> const auxTask = [...{ chore: { task }, complete: false })
 		setTask('')
 	}
-	console.log(data)
 
 	return (
 		<>

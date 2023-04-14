@@ -1,12 +1,17 @@
+import { useState } from 'react'
 import './Tasks.css'
+import data from './Data'
 
 const Tasks = () => {
-	return (
-		<>
-			<li>Wake up</li>
-			<li>Take a shower</li>
-			<li>Eat Breakfast</li>
-		</>
-	)
+	const [list, setList] = useState(data)
+
+	setList((data = [...data]))
+	list.map(index => {
+		return (
+			<>
+				<li>{list.chore}</li>
+			</>
+		)
+	})
 }
 export default Tasks
