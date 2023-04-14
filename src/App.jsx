@@ -1,10 +1,10 @@
 import './App.css'
-import Input from './components/input.jsx'
+import CreateTask from './components/CreateTask'
 
 const App = () => {
 	return (
 		<>
-			<Input />
+			<CreateTask />
 		</>
 	)
 }

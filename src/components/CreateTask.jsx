@@ -1,22 +1,21 @@
 import { useState } from 'react'
 import tasks from './Datos'
+import './CreateTask.css'
 
-const Input = () => {
+const CreateTask = () => {
 	const [taskLength, setTaskLength] = useState(4)
 
 	const [task, setTask] = useState('')
 
 	const createTask = () => {
-		tasks.push({ chore: task })
+		tasks.push({ chore: task, button: 'invisible' })
 		setTaskLength(tasks.length)
 		setTask('')
 	}
 
 	return (
 		<div className='container'>
-			<div className='header'>
-				<h1>To Do List</h1>
-			</div>
+			<h1>To Do List</h1>
 			<div className='body'>
 				<ul>
 					<li>
@@ -34,10 +33,20 @@ const Input = () => {
 					</li>
 					{tasks.map((chore, index) => {
 						return (
-							<li className='d-flex' key={index}>
+							<li
+								className='d-flex'
+								onMouseEnter={e => {
+									chore.button = 'visible'
+								}}
+								onMouseLeave={e => {
+									chore.button = 'invisible'
+								}}
+								key={index}
+							>
 								{chore.chore}
 								<button
 									type='button'
+									ref={chore.button}
 									className='btn-close ms-auto'
 									onClick={() => {
 										tasks.splice(index, 1)
@@ -61,4 +70,4 @@ const Input = () => {
 	)
 }
 
-export default Input
+export default CreateTask
