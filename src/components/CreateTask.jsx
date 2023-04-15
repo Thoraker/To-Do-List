@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import tasks from './Datos'
 import './CreateTask.css'
+import Counter from './Counter'
 
 const CreateTask = () => {
 	const [taskLength, setTaskLength] = useState(4)
@@ -8,21 +9,21 @@ const CreateTask = () => {
 	const [task, setTask] = useState('')
 
 	const createTask = () => {
-		tasks.push({ chore: task, button: 'invisible' })
+		tasks.push({ id: +new Date(), chore: task, completed: false })
 		setTaskLength(tasks.length)
 		setTask('')
 	}
 
 	return (
 		<div className='container'>
-			<h1>To Do List</h1>
+			<h1>Lista de tareas</h1>
 			<div className='body'>
 				<ul>
 					<li>
 						<input
 							type='text'
 							name='chore'
-							placeholder='What needs to be done?'
+							placeholder='Agrega una nueva tarea'
 							autoComplete='off'
 							onKeyDown={e =>
 								e.key === 'Enter' || e.key === 'NumpadEnter' ? createTask() : ''
@@ -34,19 +35,12 @@ const CreateTask = () => {
 					{tasks.map((chore, index) => {
 						return (
 							<li
-								className='d-flex'
-								onMouseEnter={e => {
-									chore.button = 'visible'
-								}}
-								onMouseLeave={e => {
-									chore.button = 'invisible'
-								}}
+								className={chore.completed ? 'd-flex complete' : 'd-flex'}
 								key={index}
 							>
 								{chore.chore}
 								<button
 									type='button'
-									ref={chore.button}
 									className='btn-close ms-auto'
 									onClick={() => {
 										tasks.splice(index, 1)
@@ -56,11 +50,7 @@ const CreateTask = () => {
 							</li>
 						)
 					})}
-					<li id='counter'>
-						{taskLength === 0
-							? 'No Chores Left!! Well done!!'
-							: taskLength + ' chores left'}
-					</li>
+					<Counter props={taskLength} />
 				</ul>
 			</div>
 			<div id='stackOfPages1'></div>

@@ -1,5 +1,5 @@
-.visible button {
-	display: none;
+body {
+	background-color: beige;
 }
 
 h1 {
@@ -18,8 +18,13 @@ ul {
 	margin: 0;
 }
 
+.complete {
+	text-decoration: line-through;
+}
+
 li {
 	list-style: none;
+	background-color: white;
 	border: 1px solid lightgrey;
 	padding: 5px 15px;
 }
@@ -32,6 +37,7 @@ li {
 
 #stackOfPages1 {
 	border: 2px solid lightgrey;
+	background-color: white;
 	border-top: none;
 	margin: 0 10px;
 	height: 5px;
@@ -39,6 +45,7 @@ li {
 
 #stackOfPages2 {
 	border: 2px solid lightgrey;
+	background-color: white;
 	border-top: none;
 	margin: 0 20px;
 	height: 5px;
@@ -46,11 +53,16 @@ li {
 
 #stackOfPages3 {
 	border: 2px solid lightgrey;
+	background-color: white;
 	border-top: none;
 	margin: 0 30px;
 	height: 5px;
 }
 
-#invisible {
+button {
 	display: none;
+}
+
+li:hover button {
+	display: block;
 }
