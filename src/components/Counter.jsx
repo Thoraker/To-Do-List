@@ -2,8 +2,8 @@ const Counter = props => {
 	return (
 		<li id='counter'>
 			{props.props === 0
-				? 'Sin tareas pendientes, ¡¡Bien ahí!!'
-				: props.props + ' tareas pendientes'}
+				? 'Sin quehaceres pendientes, ¡¡Bien ahí!!'
+				: props.props + ' quehaceres pendientes'}
 		</li>
 	)
 }

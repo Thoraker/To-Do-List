@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
 import tasks from './Datos'
 import './CreateTask.css'
 import Counter from './Counter'
@@ -9,21 +10,22 @@ const CreateTask = () => {
 	const [task, setTask] = useState('')
 
 	const createTask = () => {
-		tasks.push({ id: +new Date(), chore: task, completed: false })
+		const id = uuidv4()
+		tasks.push({ id: id, chore: task, completed: false })
 		setTaskLength(tasks.length)
 		setTask('')
 	}
 
 	return (
 		<div className='container'>
-			<h1>Lista de tareas</h1>
+			<h1>Lista de Quehaceres</h1>
 			<div className='body'>
 				<ul>
 					<li>
 						<input
 							type='text'
 							name='chore'
-							placeholder='Agrega una nueva tarea'
+							placeholder='Agrega un nuevo quehacer'
 							autoComplete='off'
 							onKeyDown={e =>
 								e.key === 'Enter' || e.key === 'NumpadEnter' ? createTask() : ''
