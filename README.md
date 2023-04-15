@@ -19,15 +19,7 @@
 - ⚡️ Proyecto realizado con Vite
 - 🛠️ Realizado en React
 
-Vite (palabra en francés que significa "Rápido", se pronuncia [`/vit/`](https://cdn.jsdelivr.net/gh/vitejs/vite@main/docs/public/vite.mp3), parecido a "veet") es una herramienta de compilación que tiene como objetivo proporcionar una experiencia de desarrollo más rápida y ágil para proyectos web modernos. Consta de dos partes principales:
-
-- Un servidor de desarrollo que proporciona mejoras [mejoras enriquecidas de funcionalidades](https://es.vitejs.dev/guide/features.html) sobre [módulos ES nativos](https://developer.mozilla.org/es-US/docs/Web/JavaScript/Guide/Modules), por ejemplo [Hot Module Replacement (HMR)](https://vitejs.dev/guide/features.html#hot-module-replacement) extremadamente rápido.
-
-- Un comando de compilación que empaqueta tu código con [Rollup](https://rollupjs.org), pre-configurado para generar recursos estáticos altamente optimizados para producción.
-
-Vite es dogmático y viene con configuraciones predeterminadas listas para usar, pero también es altamente extensible a través de sus [API de complementos](https://es.vitejs.dev/guide/api-plugin.html) y [API de JavaScript](https://es.vitejs.dev/guide/api-javascript.html) con soporte completo de escritura.
-
-Puedes obtener más información sobre la razón de ser del proyecto en la sección [¿Por qué Vite?](https://es.vitejs.dev).
+¿Quieres obtener más información acerca de Vite? [Vite](https://es.vitejs.dev).
 
 # Scripts
 
