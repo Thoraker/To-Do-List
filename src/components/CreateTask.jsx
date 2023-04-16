@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { v4 as uuidv4 } from 'uuid'
+import { v4 as UUID4 } from 'uuid'
 import tasks from './Datos'
 import './CreateTask.css'
 import Counter from './Counter'
@@ -10,8 +10,8 @@ const CreateTask = () => {
 	const [task, setTask] = useState('')
 
 	const createTask = () => {
-		const id = uuidv4()
-		tasks.push({ id: id, chore: task, completed: false })
+		const uniqueId = UUID4()
+		tasks.push({ id: uniqueId, chore: task, completed: false })
 		setTaskLength(tasks.length)
 		setTask('')
 	}
